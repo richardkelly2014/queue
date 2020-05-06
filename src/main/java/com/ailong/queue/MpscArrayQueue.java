@@ -80,17 +80,12 @@ public class MpscArrayQueue<E> extends MpscArrayQueueL3Pad<E> {
         // If we can't see the next available element we can't poll
         E e = lvRefElement(buffer, offset);
         if (null == e) {
-            /*
-             * NOTE: Queue may not actually be empty in the case of a producer (P1) being interrupted after
-             * winning the CAS on offer but before storing the element in the queue. Other producers may go on
-             * to fill up the queue after this element.
-             */
+            //判断 消费索引和生产索引是否相等
             if (cIndex != lvProducerIndex()) {
-                // 消费索引和 生产者索引
                 do {
+                    //不想等，继续获取元素
                     e = lvRefElement(buffer, offset);
-                }
-                while (e == null);
+                } while (e == null);
             } else {
                 return null;
             }
@@ -109,16 +104,10 @@ public class MpscArrayQueue<E> extends MpscArrayQueueL3Pad<E> {
         final long offset = calcCircularRefElementOffset(cIndex, mask);
         E e = lvRefElement(buffer, offset);
         if (null == e) {
-            /*
-             * NOTE: Queue may not actually be empty in the case of a producer (P1) being interrupted after
-             * winning the CAS on offer but before storing the element in the queue. Other producers may go on
-             * to fill up the queue after this element.
-             */
             if (cIndex != lvProducerIndex()) {
                 do {
                     e = lvRefElement(buffer, offset);
-                }
-                while (e == null);
+                } while (e == null);
             } else {
                 return null;
             }
