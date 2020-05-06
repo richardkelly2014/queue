@@ -12,6 +12,9 @@ import static com.ailong.queue.util.UnsafeRefArrayAccess.lvRefElement;
 
 /**
  * 圆形 数组操作 队列
+ * <p>
+ * 数组长度必须是2的N次方，mask = 2的N次方-1
+ * </p>
  *
  * @param <E>
  */
