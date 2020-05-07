@@ -27,4 +27,11 @@ public class BaseTest {
         log.info("{}", 111);
     }
 
+    @Test
+    public void test3() {
+        long current = System.currentTimeMillis();
+
+        log.info("{}", current / 1_000);
+    }
+
 }
