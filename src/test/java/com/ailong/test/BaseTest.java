@@ -20,4 +20,11 @@ public class BaseTest {
         log.info("{}", UnsafeLongArrayAccess.LONG_ARRAY_BASE);
     }
 
+    @Test
+    public void test2() {
+        long current = System.currentTimeMillis();
+
+        log.info("{}", current / 1_000);
+    }
+
 }
