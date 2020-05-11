@@ -1,5 +1,6 @@
 package com.ailong.disruptor.util;
 
+import com.ailong.disruptor.Sequence;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -79,4 +80,16 @@ public final class Util {
         return timeoutNanos - (t1 - t0);
     }
 
+    public static long getMinimumSequence(final Sequence[] sequences) {
+        return getMinimumSequence(sequences, Long.MAX_VALUE);
+    }
+
+    public static long getMinimumSequence(final Sequence[] sequences, long minimum) {
+        for (int i = 0, n = sequences.length; i < n; i++) {
+            long value = sequences[i].get();
+            minimum = Math.min(minimum, value);
+        }
+
+        return minimum;
+    }
 }
