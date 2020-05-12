@@ -1,4 +1,4 @@
-package com.ailong.disruptor;
+package com.ailong.disruptor.consumer;
 
 /**
  * 事件处理 句柄
