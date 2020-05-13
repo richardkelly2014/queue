@@ -1,6 +1,5 @@
 package com.ailong.test;
 
-import com.ailong.disruptor.util.ThreadHints;
 import com.ailong.queue.util.Pow2;
 import com.ailong.queue.util.UnsafeLongArrayAccess;
 import com.ailong.queue.util.UnsafeRefArrayAccess;
@@ -23,7 +22,6 @@ public class BaseTest {
 
     @Test
     public void test2() {
-        ThreadHints.onSpinWait();
         log.info("{}", 111);
     }
 
