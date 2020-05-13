@@ -21,39 +21,74 @@ public class WorkerPoolInfo<T> implements ConsumerInfo {
         this.sequenceBarrier = sequenceBarrier;
     }
 
+//    @Override
+//    public Sequence[] getSequences() {
+//        return workerPool.getWorkerSequences();
+//    }
+//
+//    @Override
+//    public SequenceBarrier getBarrier() {
+//        return sequenceBarrier;
+//    }
+//
+//    @Override
+//    public boolean isEndOfChain() {
+//        return endOfChain;
+//    }
+//
+//    @Override
+//    public void start(Executor executor) {
+//        workerPool.start(executor);
+//    }
+//
+//    @Override
+//    public void halt() {
+//        workerPool.halt();
+//    }
+//
+//    @Override
+//    public void markAsUsedInBarrier() {
+//        endOfChain = false;
+//    }
+//
+//    @Override
+//    public boolean isRunning() {
+//        return workerPool.isRunning();
+//    }
+
+
     @Override
     public Sequence[] getSequences() {
-        return workerPool.getWorkerSequences();
+        return new Sequence[0];
     }
 
     @Override
     public SequenceBarrier getBarrier() {
-        return sequenceBarrier;
+        return null;
     }
 
     @Override
     public boolean isEndOfChain() {
-        return endOfChain;
+        return false;
     }
 
     @Override
     public void start(Executor executor) {
-        workerPool.start(executor);
+
     }
 
     @Override
     public void halt() {
-        workerPool.halt();
+
     }
 
     @Override
     public void markAsUsedInBarrier() {
-        endOfChain = false;
+
     }
 
     @Override
     public boolean isRunning() {
-        return workerPool.isRunning();
+        return false;
     }
-
 }

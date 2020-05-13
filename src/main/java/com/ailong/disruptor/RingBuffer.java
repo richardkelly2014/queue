@@ -156,6 +156,10 @@ public final class RingBuffer<E> extends RingBufferFields<E> implements Cursored
         return sequencer.getCursor();
     }
 
+    public SequenceBarrier newBarrier(Sequence... sequencesToTrack) {
+        return sequencer.newBarrier(sequencesToTrack);
+    }
+
     public int getBufferSize() {
         return bufferSize;
     }

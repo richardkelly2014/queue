@@ -2,10 +2,7 @@ package com.ailong.disruptor.consumer;
 
 import com.ailong.disruptor.Sequence;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.IdentityHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 消费者 集合
@@ -23,4 +20,8 @@ public class ConsumerRepository<T> implements Iterable<ConsumerInfo> {
     //消费者集合
     private final Collection<ConsumerInfo> consumerInfos = new ArrayList<>();
 
+    @Override
+    public Iterator<ConsumerInfo> iterator() {
+        return null;
+    }
 }

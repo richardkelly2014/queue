@@ -75,7 +75,8 @@ public abstract class AbstractSequencer implements Sequencer {
 
     @Override
     public <T> EventPoller<T> newPoller(DataProvider<T> dataProvider, Sequence... gatingSequences) {
-        return EventPoller.newInstance(dataProvider, this, new Sequence(), cursor, gatingSequences);
+        return null;
+        //return EventPoller.newInstance(dataProvider, this, new Sequence(), cursor, gatingSequences);
     }
 
     @Override
