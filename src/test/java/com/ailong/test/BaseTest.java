@@ -31,4 +31,11 @@ public class BaseTest {
         log.info("{}", current / 1_000);
     }
 
+    @Test
+    public void test4() {
+        log.info("{}", System.getProperty("java.specification.version"));
+        log.info("{}", System.getProperty("java.vm.name"));
+        log.info("{}", System.getProperty("os.arch"));
+    }
+
 }
