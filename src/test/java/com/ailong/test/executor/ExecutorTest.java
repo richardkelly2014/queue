@@ -17,7 +17,7 @@ public class ExecutorTest {
         testExecutor.submit(new Runnable() {
             @Override
             public void run() {
-                log.info("111");
+                log.info("222");
             }
         });
 
